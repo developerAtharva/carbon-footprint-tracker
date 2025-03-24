@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ user.username }}!</h1>
+        <p>Track your carbon footprint and reduce your impact on the planet.</p>
+        <div class="dashboard">
+            <a href="{{ url_for('calculator') }}" class="button">Calculate Your Carbon Footprint</a>
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Carbon Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Carbon Footprint Tracker</h1>
+        <p>Track your daily carbon emissions and get recommendations to reduce them.</p>
+        <a href="{{ url_for('login') }}">Login</a> | 
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+    </div>
+</body>
+</html>

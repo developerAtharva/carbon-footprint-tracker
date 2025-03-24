@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Footprint Calculator</h1>
+        <form method="POST">
+            <label>Daily Transport (km):</label>
+            <input type="number" name="transport" required>
+
+            <label>Electricity Usage (kWh per day):</label>
+            <input type="number" name="electricity" required>
+
+            <label>Diet Type:</label>
+            <select name="diet">
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="meat">Meat-based</option>
+            </select>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if emissions %}
+            <h2>Your Estimated Carbon Footprint: {{ emissions }} kg CO₂/day</h2>
+            <h3>Recommendations:</h3>
+            <ul>
+                {% for rec in recommendations %}
+                    <li>{{ rec }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
